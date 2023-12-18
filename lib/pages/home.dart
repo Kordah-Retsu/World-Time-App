@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'dart:convert';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
-  _HomeState createState() => _HomeState();
+  State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/location');
-                },
-                icon: Icon(Icons.edit_location),
-                label: Text(
-                    'Edit Location'
-                )
-            )
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(context, '/location');
+                // Add your button press logic here
+              },
+              icon: Icon(Icons.edit_location), // Placeholder icon
+              label: Text('Edit Location'), // Placeholder label
+            ),
           ],
         ),
       ),
